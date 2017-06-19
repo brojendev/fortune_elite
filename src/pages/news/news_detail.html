@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios">Close</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>News Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card">
+    <div class="title">{{params.data.title}}</div>
+    <div class="title-sec">
+      <span class="date">{{getDate(params.data) | amDateFormat:'D MMM, YYYY'}}</span>
+    </div>
+    <div class="content" [innerHtml]="params.data.details"></div>
+  </div>
+</ion-content>

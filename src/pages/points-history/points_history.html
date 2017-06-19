@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Points Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="point-details">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="" col-12>
+          <span class="left title clearfix">Accumulation</span>
+          <span class="right text-highlight">{{creditBalance + " PTS"}}</span>
+        </ion-col>
+        <ion-col class="" col-12>
+          <span class="left title clearfix">Redeemed</span>
+          <span class="right text-highlight">{{debitBalance + " PTS"}}</span>
+        </ion-col>
+        <ion-col class="" col-12>
+          <span class="left title clearfix">Available</span>
+          <span class="right text-highlight">{{availablePoints + " PTS"}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="title clearfix" style="margin: 10px;font-size: 16px;font-weight: 500;">Point History</div>
+  <ul class="list">
+    <li *ngFor="let item of history" class="border-bottom" padding>
+      <div class="clearfix">
+        <span class="title">{{ item.transaction_type }}</span>
+        <span class="right">{{ item.reward_points + " pts"}}</span>
+      </div>
+      <span>{{ item.created_at }}</span>
+    </li>
+  </ul>
+</ion-content>

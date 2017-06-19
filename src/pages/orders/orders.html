@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Orders</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ul class="list">
+    <li *ngFor="let item of orders" class="border-bottom" padding (click)="openDetailsPage(item)">
+      <div class="clearfix">
+        <div class="left">
+          <span class="title">ID #{{ item.orderId }}</span>
+          <br>
+          <span>{{ item.orderDate }}</span>
+        </div>
+        <div class="right text-highlight text-center" >
+          <!--<img src="{{ status[item.status].img }}" class="order_status"><br>
+          {{ status[item.status].name }}-->
+          <ion-icon name="list"></ion-icon><br>
+          Details
+        </div>
+      </div>
+    </li>
+  </ul>
+</ion-content>

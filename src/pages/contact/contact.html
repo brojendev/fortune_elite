@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contact Us</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card" *ngIf="about">
+    <div class="title">About TATA Sitare</div>
+    <div class="content" [innerHTML]="about"></div>
+  </div>
+
+  <div class="custom-card action-card" (click)="dial()">
+    <div class="title" *ngIf="number">
+      <ion-icon name="call" color="secondary" class="icon-left"></ion-icon>
+      <span [innerHTML]="number"></span>
+      <ion-icon name="arrow-forward" class="arrow"></ion-icon>
+    </div>
+  </div>
+
+  <div class="custom-card action-card" (click)="mailClient()">
+    <div class="title" *ngIf="email">
+      <ion-icon name="mail" color="secondary" class="icon-left"></ion-icon>
+      <span [innerHTML]="email"></span>
+      <ion-icon name="arrow-forward" class="arrow"></ion-icon>
+    </div>
+  </div>
+</ion-content>

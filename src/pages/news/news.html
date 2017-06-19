@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>News</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card" *ngFor="let item of news">
+    <div class="title">{{item.title}}</div>
+    <div class="title-sec">
+      <span class="date">{{getDate(item) | amDateFormat:'D MMM, YYYY'}}</span>
+      <span class="view" (click)="openNewsModal(item)">View</span>
+    </div>
+  </div>
+</ion-content>

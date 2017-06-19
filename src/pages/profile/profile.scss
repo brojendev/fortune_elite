@@ -1,0 +1,61 @@
+.profile-content {
+  background-image: $profile-background;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.profile-wrapper {
+  width: 100%;
+  position: fixed;
+  height: calc(100% - 120px);
+  top: 120px;
+  background: #fff;
+}
+
+.profile-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 36px;
+  position: absolute;
+  top: -36px;
+  left: 16px;
+  @include material-shadow(4px);
+}
+
+.upload-pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: map-get($colors, secondary);
+  display: inline-block;
+  position: absolute;
+  top: -24px;
+  right: 16px;
+  background-image: $upload-pic;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include material-shadow(6px);
+}
+
+.profile-content {
+  .user-name {
+    font-size: 18px;
+  }
+
+  .user-email {
+    margin-top: 6px;
+    color: rgba(0, 0, 0, .54);
+  }
+
+  .show-history {
+    text-decoration: underline;
+  }
+
+  .caption {
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+}

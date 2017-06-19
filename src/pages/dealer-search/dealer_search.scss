@@ -1,0 +1,48 @@
+.dealer-card {
+  .content {
+    padding: 15px;
+    font-size: 1.3rem;
+  }
+
+  .image {
+    width: 64px;
+    height: 64px;
+    float: left;
+    margin-right: 15px;
+    background-color: #eee;
+    border-radius: 32px;
+  }
+
+  .dealer-detail {
+    .title {
+      padding: 0px;
+      margin-bottom: 8px;
+      text-transform: capitalize;
+    }
+
+    margin-bottom: 10px;
+  }
+
+  .location-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+  }
+
+  .actions {
+    ion-col {
+      text-align: center;
+      font-size: 16px;
+      color: map-get($colors, secondary);
+      padding: 10px 0px;
+    }
+  }
+
+  .dealer-detail{
+    font-size: 1.2rem;
+  }
+  .capitalize{
+    text-transform: capitalize;
+    margin: 0;
+  }
+}

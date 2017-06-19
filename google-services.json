@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "616807808716",
+    "firebase_url": "https://tata-40b49.firebaseio.com",
+    "project_id": "tata-40b49",
+    "storage_bucket": "tata-40b49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616807808716:android:12e0b22897c776e8",
+        "android_client_info": {
+          "package_name": "com.mjunction.tatatube.sitare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616807808716-2ereld2mv9lt47n23bsr2mc6qdinp02c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZPvZGvyTaRViYa0sOIDsLxvE7Wk3yHOY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

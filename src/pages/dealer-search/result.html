@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Search Results</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card dealer-card" *ngFor="let dealer of dealers">
+    <div class="content border-bottom">
+      <div class="dealer-detail clearfix">
+        <span class="image"><img src="assets/profile_placeholder.png"></span>
+        <div class="title">
+          {{ dealer.comp_name }}
+        </div>
+        <p class="capitalize"><ion-icon name="person" color="secondary" class="icon-left"></ion-icon>{{ ' ' + dealer.fname + ' ' + dealer.mname + ' ' + dealer.lname}}</p>
+        <ion-icon name="call" color="secondary" class="icon-left"></ion-icon>
+        {{ ' '+dealer.mobile }}<br>
+        <ion-icon name="mail" color="secondary" class="icon-left"></ion-icon>
+        {{ dealer.email_address != null ?  ' '+dealer.email_address : 'N/A'}}
+      </div>
+
+      <img src="assets/location.png" class="location-icon">{{ dealer.add1 }}{{dealer.add2 != '' ? ','+dealer.add2 : ''}}{{dealer.add3 != '' ? ','+dealer.add3 : ''}}{{dealer.city != '' ? ','+dealer.city : ''}}{{dealer.state != '' ? ','+dealer.state : ''}}{{dealer.pin != '' ? ' '+dealer.pin : ''}}
+    </div>
+
+    <div class="actions">
+      <ion-row *ngIf="!registerPurchase">
+        <ion-col col-6 (click)="dial(dealer.mobile)">
+          Call
+        </ion-col>
+
+        <ion-col col-6 style="border-left: solid 1px rgba(0, 0, 0, .12)" (click)="mailClient(dealer.email_address)">
+          Mail
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="registerPurchase">
+        <ion-col col-12 (click)="openPurchaseForm(dealer)">
+          Select
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios">Close</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Filter Rewards</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="filters-container">
+    <ion-item class="category">
+      <ion-label>Category</ion-label>
+      <ion-select [(ngModel)]="category">
+        <ion-option value="{{ category.categoryId }}" *ngFor="let category of categories">{{ category.categoryName }}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <span class="caption">Points Range</span>
+
+    <ion-item>
+      <ion-range min="{{min}}" max="{{max}}" pin="true" dualKnobs="true" [(ngModel)]="range">
+        <span range-left small>{{min}}</span>
+        <span range-right small>{{max}}</span>
+      </ion-range>
+    </ion-item>
+    <ion-row style="margin-top: 24px">
+      <ion-col col-2>
+      </ion-col>
+      <ion-col col-8>
+        <button style="margin-top: 48px; height: 35px;" ion-button outline block color="secondary" (click)="dismiss()">Apply</button>
+      </ion-col>
+      <ion-col col-2>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

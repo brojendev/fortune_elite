@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Welcome {{userName}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToProfile()">
+        <ion-icon ios="ios-contact-outline" md="ios-contact-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager>
+    <ion-slide>
+      <img style="width: 100%" src="assets/about_banner.png">
+    </ion-slide>
+    <ion-slide>
+      <img style="width: 100%" src="assets/about_banner.png">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col col-6 col-sm-4 *ngFor="let page of pages" (click)="openPage(page)">
+        <img class="home-options-image" src="{{ page.img }}">
+        <br>
+        <span class="home-options-text">{{ page.title }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Rewards</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToCart()">
+        <ion-icon ios="ios-cart-outline" md="ios-cart-outline"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="openFilters()">
+        <ion-icon ios="ios-funnel-outline" md="ios-funnel-outline">
+          <span *ngIf="cartCount > 0" style="position:absolute; border: 2px solid red; padding:.1rem; border-radius: 25px; background-color:red; top:.1em; left:-3.5em; font-size:1rem !important; font-weight:500;">{{cartCount}}</span>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <input type="hidden" value="{{filter}}" [(ngModel)]="filter">
+  <input type="hidden" value="{{pageNumber}}" [(ngModel)]="pageNumber">
+  <div class="custom-card thumbnail-card" *ngFor="let reward of rewards" (click)="openRewardDetails(reward)">
+    <div class="thumbnail" [style.background-image]="'url(' + reward.BaseUrl + reward.ProductImage + ')'"></div>
+    <div class="title">
+      {{reward.productName}}
+    </div>
+
+    <div class="title-sec">
+      <span class="points">{{reward.pricePoints}} pts</span>
+    </div>
+  </div>
+  <ion-infinite-scroll (ionInfinite)="loadMoreProduct($event)" *ngIf="noProduct == 0">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

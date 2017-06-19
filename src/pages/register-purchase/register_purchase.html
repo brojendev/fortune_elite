@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Register Purchase</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card dealer-card">
+    <div class="content border-bottom">
+      <div class="dealer-detail clearfix">
+        <span class="image"><img src="assets/profile_placeholder.png"></span>
+        <div class="title">
+          {{ dealer.comp_name }}
+        </div>
+        <p class="capitalize"><ion-icon name="person" color="secondary" class="icon-left"></ion-icon>{{ ' ' + dealer.fname + ' ' + dealer.mname + ' ' + dealer.lname}}</p>
+        <ion-icon name="call" color="secondary" class="icon-left"></ion-icon>
+        {{ ' '+dealer.mobile }}<br>
+        <ion-icon name="mail" color="secondary" class="icon-left"></ion-icon>
+        {{ dealer.email_address != null ?  ' '+dealer.email_address : 'N/A'}}
+      </div>
+
+      <img src="assets/location.png" class="location-icon">{{ dealer.add1 }}{{dealer.add2 != '' ? ','+dealer.add2 : ''}}{{dealer.add3 != '' ? ','+dealer.add3 : ''}}{{dealer.city != '' ? ','+dealer.city : ''}}{{dealer.state != '' ? ','+dealer.state : ''}}{{dealer.pin != '' ? ' '+dealer.pin : ''}}
+    </div>
+  </div>
+
+  <div class="custom-card">
+    <div class="title">Enter Purchase Details</div>
+    <div class="content">
+      <ion-item>
+        <ion-input type="text" placeholder="Quantity Purchased (kg)*" [(ngModel)]="purchaseData.quantity"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-datetime placeholder="Date of purchase" type="date-local" displayFormat="MMM DD, YYYY" pickerFormat="YYYY-MM-DD" [(ngModel)]="purchaseData.date"></ion-datetime>
+      </ion-item>
+
+      <input type="hidden" [(ngModel)]="purchaseData.dealertContactId" value="{{dealer.contact_id}}">
+      <button style="margin-top: 32px" ion-button outline color="secondary" (click)="openImageDialog()" *ngIf="!purchaseData.invoice">Upload Invoice</button>
+
+      <div text-center style="margin-top: 30px" *ngIf="purchaseData.invoice">
+        <img src="data:image/png;base64,{{purchaseData.invoice}}" style="width: 80%"/><br>
+        <ion-icon (click)="removeAttachedImage()" ios="ios-trash-outline" md="ios-trash-outline" class="remove" style="font-size: 24px"></ion-icon>
+      </div>
+
+      <button style="margin-top: 48px" ion-button block color="secondary" (click)="submit()">Submit</button>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Fabricator Registration</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card">
+    <div class="title">Personal Details</div>
+    <div class="content">
+      <ion-item>
+        <ion-input type="text" placeholder="First Name*" [(ngModel)]="registerData.firstName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Last Name*" [(ngModel)]="registerData.lastName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-datetime type="date-local" max={{dob}} displayFormat="MMM DD, YYYY" pickerFormat="YYYY-MM-DD" [(ngModel)]="registerData.dob"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="email" placeholder="email" [(ngModel)]="registerData.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Phone Number*" [(ngModel)]="registerData.phoneNumber"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Identification Type*</ion-label>
+        <ion-select [(ngModel)]="registerData.identificationType">
+          <ion-option value="{{ identification.id }}" *ngFor="let identification of identifications">{{ identification.name }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Identification Value*" [(ngModel)]="registerData.identificationValue"></ion-input>
+      </ion-item>
+    </div>
+  </div>
+
+  <div class="custom-card">
+    <div class="title">Address</div>
+    <div class="content">
+      <ion-item>
+        <ion-input type="text" placeholder="Address Line 1*" [(ngModel)]="registerData.addressLine1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Address Line 2" [(ngModel)]="registerData.addressLine2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>State*</ion-label>
+        <ion-select [(ngModel)]="registerData.selectedState" (ionChange)="updateDistrictList($event)">
+          <ion-option value="{{ state.id }}" *ngFor="let state of states">{{ state.name }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="registerData.selectedState">
+        <ion-label>District*</ion-label>
+        <ion-select [(ngModel)]="registerData.selectedDistrict">
+          <ion-option value="{{ district.id }}" *ngFor="let district of districts">{{ district.name }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Pincode*" [(ngModel)]="registerData.pincode"></ion-input>
+      </ion-item>
+
+      <button style="margin-top: 48px" ion-button block color="secondary" (click)="submit()">Submit</button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,50 @@
+.rd-header {
+  position: relative;
+  > img {
+    background: #ddd;
+    width: 64px;
+    height: 64px;
+  }
+
+  > .group {
+    padding-left: 80px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+  }
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left {
+  float: left;
+  display: inline-block;
+}
+
+.right {
+  float: right;
+  display: inline-block;
+}
+
+.reward-details-tab {
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .screenshot {
+    text-align: center;
+    img {
+      width: 80%;
+    }
+
+  }
+
+  .padding-vertical {
+    padding: 8px 0px;
+  }
+}

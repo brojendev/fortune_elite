@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Search Dealer</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card">
+    <div class="title">Search by company name</div>
+    <div class="content">
+      <ion-item>
+        <ion-input type="text" placeholder="Company name*" [(ngModel)]="dealerCompName"></ion-input>
+      </ion-item>
+
+      <button style="margin-top: 48px" ion-button block color="secondary" (click)="searchByDealerCompanyName()">Search</button>
+    </div>
+  </div>
+
+  <div text-center>
+    <span class="login-or">or</span>
+  </div>
+
+  <div class="custom-card">
+    <div class="title">Search by location</div>
+    <div class="content">
+      <ion-item>
+        <ion-label>State*</ion-label>
+        <ion-select [(ngModel)]="selectedState" (ionChange)="updateDistrictList($event)">
+          <ion-option value="{{ state.id }}" *ngFor="let state of states">{{ state.name }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item >
+        <ion-label>District*</ion-label>
+        <ion-select [(ngModel)]="selectedDistrict">
+          <ion-option value="{{ district.id }}" *ngFor="let district of districts">{{ district.name }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button style="margin-top: 48px" ion-button block color="secondary" (click)="searchByLocation()">Search</button>
+    </div>
+  </div>
+</ion-content>

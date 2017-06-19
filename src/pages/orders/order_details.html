@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>#{{ order.orderId }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="order-details">
+  <div class="title">Order Details</div>
+  <div class="clearfix padding-vertical border-bottom">
+    <span class="left">Order ID</span>
+    <span class="right text-highlight">#{{ order.orderId }}</span>
+  </div>
+
+  <!--<div class="clearfix padding-vertical border-bottom">
+    <span class="left">Order Status</span>
+    <span class="right text-secondary">{{ status[1].name }}</span>
+  </div>-->
+
+  <div class="title" style="margin-top: 30px">Items Purchased</div>
+
+  <div class="border-bottom cart-item" *ngFor="let item of order.item_details">
+    <img src="{{item.BaseUrl + item.product_image}}">
+    <div class="group">
+      <div class="group">
+        <span class="left title">{{item.productName}}</span>
+      </div>
+      <div class="group" style="margin-top: 8px">
+        <span class="left text-highlight">{{item.status}}</span>
+        <span class="right text-highlight">{{item.itemQuantity + ' x ' + item.pricePoint}} PTS</span>
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="clearfix padding-vertical">
+    <span class="left">Total Points</span>
+    <span class="right">{{ order.totalPoints }} PTS</span>
+  </div>-->
+
+
+  <div class="title" style="margin-top: 30px">Shipping Address</div>
+  {{ order.orderAddress }}
+</ion-content>

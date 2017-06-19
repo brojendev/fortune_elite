@@ -1,0 +1,6 @@
+.datetime-text:empty:not(:focus):before{
+    content: "Date of birth*"
+}
+.datetime-md{
+    padding: 13px 8px 13px 8px;;
+}

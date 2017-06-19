@@ -1,0 +1,233 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+$background-color: #F0F0F0;
+
+ion-menu .profile-placeholder {
+  width: 59px;
+  height: 59px;
+  border-radius: 50px;
+  box-sizing: content-box;
+}
+
+ion-menu .user-name {
+  font-size: 18px;
+  top: 42px;
+  position: absolute;
+}
+
+.dark-bg {
+  background: $background-color;
+}
+
+.custom-card {
+  margin: 12px;
+  background: #FFF;
+  border-radius: 8px;
+  .title {
+    padding: 16px;
+    font-size: 1.6rem;
+    color: #222;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .title-sec {
+    margin-top: -6px;
+    padding: 0px 16px 16px 16px;
+    .date {
+      color: map-get($colors, secondary);
+    }
+
+    .view {
+      color: map-get($colors, secondary);
+      float: right;
+    }
+  }
+
+  .content {
+    font-size: 1.4rem;
+    padding: 16px;
+    padding-top: 0px;
+    color: rgba(0, 0, 0, .54);
+  }
+
+  ion-item {
+    padding-left: 0px;
+    margin-bottom: 12px;
+  }
+
+  &.toggle-card {
+    .content {
+      display: none;
+    }
+
+    &.collapsed {
+      .content {
+        display: block;
+      }
+      .title {
+        white-space: normal;
+        &:before {
+          content: "-";
+        }
+      }
+    }
+
+    .title {
+      padding-right: 36px;
+      position: relative;
+      &:before {
+        content: "+";
+        color: rgba(0, 0, 0, .34);
+        position: absolute;
+        right: 16px;
+        font-size: 24px;
+        line-height: 24px;
+        top: 10px;
+      }
+    }
+  }
+
+  &.action-card {
+    .title {
+      color: #4E88DC;
+    }
+
+    span {
+      padding-left: 10px;
+    }
+
+    .arrow {
+      float: right;
+      color: rgba(0, 0, 0, .34);
+    }
+  }
+
+  &.thumbnail-card {
+    padding: 16px;
+    .thumbnail {
+      padding-bottom: 0px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 170px;
+    }
+
+    .title {
+      padding: 0px;
+      padding-top: 16px;
+    }
+
+    .title-sec {
+      padding: 0px;
+      padding-top: 14px;
+
+      .points {
+        color: map-get($colors, secondary);
+      }
+    }
+  }
+}
+
+.item-select {
+  .label-md {
+    margin: 13px 8px 13px 8px;
+  }
+  .label-ios {
+    color: #9b9b9b;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.loading-box {
+  text-align: center;
+  img {
+    margin-bottom: 10px;
+  }
+}
+
+@mixin material-shadow($depth) {
+  box-shadow: 0 0 $depth 0 rgba(0, 0, 0, .12), 0 $depth $depth 0 rgba(0, 0, 0, .24);
+}
+
+.range-bar {
+  top: 19px !important;
+  height: 4px !important;
+  border-radius: 2px !important;
+  background: #F0F0F0 !important;
+  &.range-bar-active {
+    background: map-get($colors, secondary) !important;
+  }
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.quantity-control {
+  span {
+    display: inline-block;
+    padding: 0px 2px;
+    min-width: 40px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+  }
+}
+
+
+.border-bottom {
+  border-bottom: solid 1px rgba(0, 0, 0, .12);
+}
+
+ul.list {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  li .title {
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+
+  li span:not(.title) {
+    color: map-get($colors, text-secondary);
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.text-secondary {
+  color: map-get($colors, text-secondary);
+}
+
+.text-highlight {
+  color: map-get($colors, secondary);
+}

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Cart</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="cartItems.length">
+    <div class="border-bottom cart-item" *ngFor="let item of cartItems">
+      <img src="{{item.BaseUrl + item.product_image}}">
+      <div class="group">
+        <div class="group">
+          <span class="left title">{{item.product_name}}</span>
+          <div class="right quantity-control">
+            <img src="assets/quantity_minus.png" *ngIf="item.quantity > 1" (click)="decreaseQty(item)">
+            <span>{{item.quantity}}</span>
+            <img src="assets/quantity_plus.png" *ngIf="item.quantity < 999" (click)="increaseQty(item)">
+          </div>
+        </div>
+        <div class="group" style="margin-top: 8px">
+          <span class="left text-secondary">{{item.price_in_points}} pts</span>
+          <ion-icon ios="ios-trash-outline" md="ios-trash-outline" class="right remove" (click)="removeCartItem(item)"></ion-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <span class="left">Total Points Used</span>
+      <input type="hidden" value="{{cartId}}" [(ngModel)]="cartId">
+      <span class="right text-secondary">{{grandTotal}} PTS</span>
+    </div>
+
+    <div class="title" style="margin: 30px 0px 15px 0px">Shipping Address</div>
+    {{ userAddress.addrLine1 }}, {{ userAddress.addrLine2 }}, {{ userAddress.City }}, {{ userAddress.State }}, {{ userAddress.Pin}}
+    <button style="margin-top: 30px" ion-button block color="secondary" (click)="goToSummary()">Checkout</button>
+  </div>
+</ion-content>

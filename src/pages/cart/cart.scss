@@ -1,0 +1,22 @@
+.cart-item {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  > img {
+    background: #ddd;
+    width: 48px;
+    height: 48px;
+  }
+
+  > .group {
+    padding-left: 80px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+  }
+
+  .remove {
+    font-size: 24px;
+  }
+}

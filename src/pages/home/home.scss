@@ -1,0 +1,27 @@
+ion-slides {
+  height: auto;
+}
+
+
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 8px;
+}
+
+.swiper-pagination-bullet-active {
+  background: map-get($colors, secondary);
+}
+
+.swiper-container {
+  padding-bottom: 30px;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 0px;
+  width: 24px;
+}
+
+.home-options-image {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}

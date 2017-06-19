@@ -1,0 +1,26 @@
+.forgot-password-button {
+  font-size: 16px;
+  margin: auto;
+  display: inline-block;
+  margin-top: 16px;
+  color: $text-secondary;
+}
+
+.login-or {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background: #FFF;
+  line-height: 36px;
+  font-size: 18px;
+  color: $text-secondary;
+}
+
+.create-account {
+  margin-top: 24px;
+  display: inline-block;
+  color: #4E88DC;
+  font-size: 18px;
+  border-bottom: solid 2px map-get($colors, secondary);
+}

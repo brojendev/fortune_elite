@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>FAQs</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card toggle-card" *ngFor="let faq of faqs" [ngClass]="{'collapsed' : faq.collapsed}">
+    <div class="title" (click)="faq.collapsed = !faq.collapsed">{{faq.title}}</div>
+    <div class="content" [innerHTML]="faq.details"> </div>
+  </div>
+</ion-content>

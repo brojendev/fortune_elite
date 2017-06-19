@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ reward.productName }}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goToCart()">
+        <ion-icon ios="ios-cart-outline" md="ios-cart-outline">
+          <span *ngIf="cartCount > 0" style="position:absolute; border: 2px solid red; padding:.1rem; border-radius: 25px; background-color:red; top:.1em; left:0em; font-size:1rem !important; font-weight:500;">{{cartCount}}</span>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <div padding class="border-bottom">
+    <div class="rd-header">
+      <img src="{{reward.BaseUrl + reward.ProductImage}}">
+      <div class="group">
+        <div class="group">
+          <span class="left title">{{reward.productName}}</span>
+          <div class="right quantity-control">
+            <img src="assets/quantity_minus.png" *ngIf="quantity > 1" (click)="decreaseQty()">
+            <span>{{quantity || 1}}</span>
+            <img src="assets/quantity_plus.png" *ngIf="quantity < 999" (click)="increaseQty()">
+          </div>
+        </div>
+        <div class="group" style="margin-top: 14px">
+          <span class="left text-secondary">{{reward.pricePoints}} pts</span>
+          <button ion-button color="secondary" outline class="right" small (click)="addToCart(reward)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-tabs color="secondary">
+    <ion-tab [root]="rewardOverviewPage" tabTitle="Overview" [rootParams]="reward"></ion-tab>
+    <ion-tab [root]="rewardScreenshotPage" tabTitle="Screenshot" [rootParams]="reward"></ion-tab>
+    <ion-tab [root]="rewardSpecsPage" tabTitle="Specs" [rootParams]="reward"></ion-tab>
+  </ion-tabs>
+</ion-content>

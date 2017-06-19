@@ -1,0 +1,8 @@
+<ion-content padding class="reward-details-tab">
+  <div class="title">Specifications</div>
+
+  <div class="clearfix padding-vertical border-bottom" *ngFor="let spec of reward.ProductParams">
+    <span class="left">{{ spec.attribute }}</span>
+    <span class="right text-secondary">{{ spec.value }}</span>
+  </div>
+</ion-content>

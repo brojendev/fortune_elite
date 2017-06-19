@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Address</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card">
+    <div class="title">Address</div>
+    <div class="content">
+      <ion-item>
+        <ion-input type="text" placeholder="Address Line 1*" [(ngModel)]="addressData.addressLine1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Address Line 2" [(ngModel)]="addressData.addressLine2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>State*</ion-label>
+        <ion-select [(ngModel)]="addressData.selectedState" (ionChange)="updateDistrictList($event)">
+          <ion-option value="{{ state.id }}" *ngFor="let state of states">{{ state.name }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item >
+        <ion-label>District*</ion-label>
+        <ion-select [(ngModel)]="addressData.selectedDistrict">
+          <ion-option value="{{ district.id }}" *ngFor="let district of districts">{{ district.name }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Pincode*" [(ngModel)]="addressData.pincode"></ion-input>
+      </ion-item>
+
+      <input type="hidden" [(ngModel)]="addressData.addressId">
+      <button style="margin-top: 48px" ion-button block color="secondary" (click)="submit()">Submit</button>
+    </div>
+  </div>
+</ion-content>
