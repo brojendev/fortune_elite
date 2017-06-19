@@ -16,7 +16,8 @@
       </ion-item>
 
       <ion-item>
-        <ion-input type="password" placeholder="Password*" [(ngModel)]="password"></ion-input>
+        <ion-input #input type="password" placeholder="Password*" [(ngModel)]="password"></ion-input>
+        <button ion-button clear color="dark" type="button" item-right (click)="showPassword(input)"> <ion-icon  name="{{input.type=='password' || input.type== '' ? 'eye' : 'eye-off'}}" *ngIf="password != ''"> </ion-icon></button>
       </ion-item>
 
       <button style="margin-top: 48px" ion-button block color="secondary" (click)="login()">Login</button>

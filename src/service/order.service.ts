@@ -9,8 +9,8 @@ import 'rxjs/add/operator/toPromise';
 export class OrderService {
   constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService, private utils: Utils) { }
 
-  myOrdersUrl = this.appConfig.baseUrl + '/sitare_req/myorders';
-  addToCartUrl = this.appConfig.baseUrl + '/sitare_req/addcart';
+  myOrdersUrl = this.appConfig.baseUrl + '/fortune_demo_req/myorders';
+  addToCartUrl = this.appConfig.baseUrl + '/fortune_demo_req/addcart';
 
 
   defaultHeaders = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });

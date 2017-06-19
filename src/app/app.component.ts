@@ -16,9 +16,8 @@ import { ContactPage } from '../pages/contact/contact';
 import { FaqPage } from '../pages/faq/faq';
 import { OrdersPage } from '../pages/orders/orders';
 import { CartPage } from '../pages/cart/cart';
-import { DealerSearchPage } from '../pages/dealer-search/dealer_search';
 import { ChartPage } from '../pages/chart/chart';
-
+import { DistributorSearchPage } from '../pages/distributor-search/distributor_search';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare var FirebasePlugin: any;
@@ -65,9 +64,9 @@ export class MyApp implements OnInit {
       { title: 'Rewards', component: RewardsPage },
       { title: 'My Orders', component: OrdersPage },
       { title: 'My Cart', component: CartPage },
-      { title: 'Dealer Locator', component: DealerSearchPage },
-      { title: 'Register Purchase', component: DealerSearchPage, data: { registerPurchase: true } },
       { title: 'Charts', component: ChartPage},
+      { title: 'Distributor Locator', component: DistributorSearchPage },
+      { title: 'Register Purchase', component: DistributorSearchPage, data: { registerPurchase: true } },
       { title: 'News and Updates', component: NewsPage },
       { title: 'Contact Us', component: ContactPage },
       { title: 'FAQs', component: FaqPage }

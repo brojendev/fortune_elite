@@ -9,9 +9,9 @@ import 'rxjs/add/operator/toPromise';
 export class GeneralService {
   constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService,  private utils: Utils) { }
 
-  stateDistrictUrl = this.appConfig.baseUrl + '/sitare_req/state_district_list';
-  identificationListUrl = this.appConfig.baseUrl + '/sitare_req/identity_list';
-  contentUrl = this.appConfig.baseUrl + '/sitare_req/content';
+  stateDistrictUrl = this.appConfig.baseUrl + '/fortune_demo_req/state_district_list';
+  identificationListUrl = this.appConfig.baseUrl + '/fortune_demo_req/identity_list';
+  contentUrl = this.appConfig.baseUrl + '/fortune_demo_req/content';
 
   defaultHeaders = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 

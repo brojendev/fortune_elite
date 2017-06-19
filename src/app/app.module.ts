@@ -23,11 +23,11 @@ import { FaqPage } from '../pages/faq/faq';
 import { OrdersPage } from '../pages/orders/orders';
 import { CartPage } from '../pages/cart/cart';
 import { OrderSummaryPage } from '../pages/order-summary/order_summary';
-import { DealerSearchPage } from '../pages/dealer-search/dealer_search';
+import { DistributorSearchPage } from '../pages/distributor-search/distributor_search';
 import { RewardDetailsPage } from '../pages/reward-details/reward_details';
 import { PointsHistoryPage } from '../pages/points-history/points_history';
 import { OrderDetailsPage } from '../pages/orders/order_details';
-import { DealerSearchResultPage } from '../pages/dealer-search/result';
+import { DistributorSearchResultPage } from '../pages/distributor-search/result';
 import { RegisterPurchasePage } from '../pages/register-purchase/register_purchase';
 import { AboutPage } from '../pages/about/about';
 import { ListPage } from '../pages/list/list';
@@ -73,7 +73,7 @@ enableProdMode();
     FaqPage,
     OrdersPage,
     CartPage,
-    DealerSearchPage,
+    DistributorSearchPage,
     RewardDetailsPage,
     NewsDetailModal,
     FiltersModal,
@@ -82,7 +82,7 @@ enableProdMode();
     RewardSpecsPage,
     PointsHistoryPage,
     OrderDetailsPage,
-    DealerSearchResultPage,
+    DistributorSearchResultPage,
     RegisterPurchasePage,
     OrderSummaryPage,
     AboutPage,
@@ -94,7 +94,7 @@ enableProdMode();
     IonicModule.forRoot(MyApp),
     HttpModule,
     LocalStorageModule.withConfig({
-      prefix: 'sitare-local',
+      prefix: 'fortuneElite-local',
       storageType: 'localStorage'
     }),
     MomentModule
@@ -115,7 +115,7 @@ enableProdMode();
     FaqPage,
     OrdersPage,
     CartPage,
-    DealerSearchPage,
+    DistributorSearchPage,
     RewardDetailsPage,
     NewsDetailModal,
     FiltersModal,
@@ -124,7 +124,7 @@ enableProdMode();
     RewardSpecsPage,
     PointsHistoryPage,
     OrderDetailsPage,
-    DealerSearchResultPage,
+    DistributorSearchResultPage,
     RegisterPurchasePage,
     OrderSummaryPage,
     AboutPage,

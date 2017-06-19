@@ -3,10 +3,10 @@ import { NavController, NavParams } from 'ionic-angular';
 import { RegisterPurchasePage } from '../register-purchase/register_purchase';
 
 @Component({
-  selector: 'page-dealer-search-result',
+  selector: 'page-distributor-search-result',
   templateUrl: 'result.html'
 })
-export class DealerSearchResultPage {
+export class DistributorSearchResultPage {
   dealers: any;
   registerPurchase: boolean = false;
   constructor(public navCtrl: NavController, private navParams: NavParams) {

@@ -126,4 +126,8 @@ export class LoginPage implements OnInit {
   openRegistrationPage() {
     this.navCtrl.push(FabricatorRegisterPage);
   }
+
+  showPassword(input: any){
+   input.type = input.type === 'password' ?  'text' : 'password';
+  }
 }

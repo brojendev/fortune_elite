@@ -9,11 +9,11 @@ import 'rxjs/add/operator/toPromise';
 export class UserService {
   constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService, private utils: Utils) { }
 
-  profileUrl = this.appConfig.baseUrl + '/sitare_req/profile';
-  changePasswordUrl = this.appConfig.baseUrl + '/sitare_req/changepassword';
-  changeProfilePicUrl = this.appConfig.baseUrl + '/sitare_req/change_profile_image';
-  editaddressUrl = this.appConfig.baseUrl + '/sitare_req/update_address';
-  pointStatementUrl = this.appConfig.baseUrl + '/sitare_req/pointstatements';
+  profileUrl = this.appConfig.baseUrl + '/fortune_demo_req/profile';
+  changePasswordUrl = this.appConfig.baseUrl + '/fortune_demo_req/changepassword';
+  changeProfilePicUrl = this.appConfig.baseUrl + '/fortune_demo_req/change_profile_image';
+  editaddressUrl = this.appConfig.baseUrl + '/fortune_demo_req/update_address';
+  pointStatementUrl = this.appConfig.baseUrl + '/fortune_demo_req/pointstatements';
 
   defaultHeaders = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 

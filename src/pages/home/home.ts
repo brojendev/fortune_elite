@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { RewardsPage } from '../rewards/rewards';
 import { LoginPage } from '../login/login';
-import { DealerSearchPage } from '../dealer-search/dealer_search';
+import { DistributorSearchPage } from '../distributor-search/distributor_search';
 import { OrdersPage } from '../orders/orders';
 import { ContactPage } from '../contact/contact';
 import { AboutPage } from '../about/about';
@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
   userName: any;
   constructor(public navCtrl: NavController, private localStorageService: LocalStorageService) {
     this.pages = [
-      { title: 'Register Purchase', component: DealerSearchPage, img: 'assets/home_profile.png', data: { registerPurchase: true } },
+      { title: 'Register Purchase', component: DistributorSearchPage, img: 'assets/home_profile.png', data: { registerPurchase: true } },
       { title: 'My Order', component: OrdersPage, img: 'assets/home_fabricator.png' },
       { title: 'Rewards', component: RewardsPage, img: 'assets/home_rewards.png' },
       { title: 'About Sitare', component: AboutPage, img: 'assets/home_about.png', data: { keyword: 'sitareFAQs'} },
