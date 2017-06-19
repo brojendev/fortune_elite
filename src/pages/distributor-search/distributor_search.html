@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Search Dealer</ion-title>
+    <ion-title>Search Distributor</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
     <div class="title">Search by company name</div>
     <div class="content">
       <ion-item>
-        <ion-input type="text" placeholder="Company name*" [(ngModel)]="dealerCompName"></ion-input>
+        <ion-input type="text" placeholder="Company name*" [(ngModel)]="distributorCompName"></ion-input>
       </ion-item>
 
       <button style="margin-top: 48px" ion-button block color="secondary" (click)="searchByDealerCompanyName()">Search</button>
@@ -28,6 +28,7 @@
     <div class="content">
       <ion-item>
         <ion-label>State*</ion-label>
+
         <ion-select [(ngModel)]="selectedState" (ionChange)="updateDistrictList($event)">
           <ion-option value="{{ state.id }}" *ngFor="let state of states">{{ state.name }}</ion-option>
         </ion-select>

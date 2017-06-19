@@ -9,7 +9,7 @@ import 'rxjs/add/operator/toPromise';
 export class FabricatorRegistrationService {
   constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService, private utils: Utils) { }
 
-  fabricatorRegistrationUrl = this.appConfig.baseUrl + '/sitare_req/registration';
+  fabricatorRegistrationUrl = this.appConfig.baseUrl + '/fortune_demo_req/registration';
 
   defaultHeaders = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 

@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AppConfig {
-  APIKey = 'fb425f7386e6c239e72181e8b8ac485a87b97dbf';
-  baseUrl = 'http://uat-mandres.straightline.in';
-  orgId = '85';
-  contactHierId = '72';
+  APIKey = 'f17354a5cad6d28837e1d948388d149552b653e8';
+  baseUrl = 'https://interface.straightline.in';
+  orgId = '102';
+  contactHierId = '81';
   OSType = 'android';
-  programId = '24';
+  programId = '23';
   OSVersion = '1.0';
-  dealerHierID = 43;
+  distributorHierID = 80;
   prodMasId = 107;
 }

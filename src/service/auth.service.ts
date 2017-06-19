@@ -9,9 +9,9 @@ import 'rxjs/add/operator/toPromise';
 export class AuthService {
   constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService, private utils: Utils) { }
 
-  loginUrl = this.appConfig.baseUrl + '/sitare_req/auth';
-  forgotPasswordUrl = this.appConfig.baseUrl + '/sitare_req/forgot_password';
-  registerUrl = this.appConfig.baseUrl + '/sitare_req/registration';
+  loginUrl = this.appConfig.baseUrl + '/fortune_demo_req/auth';
+  forgotPasswordUrl = this.appConfig.baseUrl + '/fortune_demo_req/forgot_password';
+  registerUrl = this.appConfig.baseUrl + '/fortune_demo_req/registration';
 
   defaultHeaders = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 

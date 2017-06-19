@@ -9,22 +9,22 @@ import 'rxjs/add/operator/toPromise';
 export class DealerService {
   constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService,  private utils: Utils) { }
 
-  dealerSearchUrl = this.appConfig.baseUrl + '/sitare_req/search_dealer_for_sale_data';
-  registerPurchaseUrl = this.appConfig.baseUrl + '/sitare_req/enter_sale_data';
+  distributorSearchUrl = this.appConfig.baseUrl + '/fortune_demo_req/search_distributor_for_sale_data';
+  registerPurchaseUrl = this.appConfig.baseUrl + '/fortune_demo_req/enter_sale_data';
 
   defaultHeaders = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
-  getDealerList(token: any, pageNumber: any, filterData: any): Promise<any> {
+  getDistributorList(token: any, pageNumber: any, filterData: any): Promise<any> {
     let body = {
       APIkey: this.appConfig.APIKey,
       token: token,
       programId: this.appConfig.programId,
       pageNumber: pageNumber,
-      dealer_hier_id: this.appConfig.dealerHierID,
+      distributor_hier_id: this.appConfig.distributorHierID,
     };
 
-    if(filterData.dealerCompName !== undefined && filterData.dealerCompName !=0){
-      body['dealerCompName']= filterData.dealerCompName;
+    if(filterData.distributorCompName !== undefined && filterData.distributorCompName !=0){
+      body['distributorCompName']= filterData.distributorCompName;
     }
     if(filterData.state_id !== undefined && filterData.state_id !=0){
       body['state_id']= filterData.state_id;
@@ -35,7 +35,7 @@ export class DealerService {
 
     let options = new RequestOptions({ headers: this.defaultHeaders });
 
-    return this.http.post(this.dealerSearchUrl, this.utils.transformRequest(body), options).toPromise().then(this.responseService.extractData).catch(this.responseService.handleAuthError);
+    return this.http.post(this.distributorSearchUrl, this.utils.transformRequest(body), options).toPromise().then(this.responseService.extractData).catch(this.responseService.handleAuthError);
   }
 
   registerPurchase(token: any, purchaseData: any): Promise<any> {

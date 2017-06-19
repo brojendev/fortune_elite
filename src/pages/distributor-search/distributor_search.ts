@@ -3,19 +3,19 @@ import { LoadingController, NavController, AlertController, NavParams } from 'io
 import { GeneralService } from '../../service/general.service';
 import { DealerService } from '../../service/dealer.service';
 import { LoginPage } from '../login/login';
-import { DealerSearchResultPage } from './result';
+import { DistributorSearchResultPage } from './result';
 import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
-  selector: 'page-dealer-search',
-  templateUrl: 'dealer_search.html'
+  selector: 'page-distributor-search',
+  templateUrl: 'distributor_search.html'
 })
-export class DealerSearchPage {
+export class DistributorSearchPage {
   states: any = [];
   districts: any = [];
   selectedState: any;
   selectedDistrict: any;
-  dealerCompName: any;
+  distributorCompName: any;
   pageNumber: number = 1;
   filter: any;
 
@@ -100,7 +100,7 @@ export class DealerSearchPage {
     this.filter = {state_id: this.selectedState, dist_id: this.selectedDistrict}
     // Search API call then pass data to next page
     let self = this;
-    this.dealerService.getDealerList(token, this.pageNumber, this.filter).then(function(res) {
+    this.dealerService.getDistributorList(token, this.pageNumber, this.filter).then(function(res) {
       loadingDialog.dismiss();
       self.openResults(res.sale_data_contacts);
     }).catch(function(error) {
@@ -135,10 +135,10 @@ export class DealerSearchPage {
 
     let loadingDialog = this.getLoadingDialog();
     loadingDialog.present();
-    this.filter = {dealerCompName: this.dealerCompName}
+    this.filter = {distributorCompName: this.distributorCompName}
     // Search API call then pass data to next page
     let self = this;
-    this.dealerService.getDealerList(token, this.pageNumber, this.filter).then(function(res) {
+    this.dealerService.getDistributorList(token, this.pageNumber, this.filter).then(function(res) {
       loadingDialog.dismiss();
       self.openResults(res.sale_data_contacts);
     }).catch(function(error) {
@@ -164,11 +164,11 @@ export class DealerSearchPage {
       return 'Please select district';
     }
 
-    if (type == 0 && !this.dealerCompName) {
+    if (type == 0 && !this.distributorCompName) {
       return 'Please enter company name';
     }
 
-    if (type == 0 && this.dealerCompName.length < 3) {
+    if (type == 0 && this.distributorCompName.length < 3) {
       return 'Please enter at lease 3 charecter';
     }
 
@@ -193,6 +193,6 @@ export class DealerSearchPage {
   }
 
   openResults(data: any) {
-    this.navCtrl.push(DealerSearchResultPage, { dealers: data, registerPurchase: this.registerPurchase });
+    this.navCtrl.push(DistributorSearchResultPage, { dealers: data, registerPurchase: this.registerPurchase });
   }
 }
