@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Charts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg" padding>
+  <ion-card>
+    <ion-card-header>
+      Target vs Achievement
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Total Sale
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #pieCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

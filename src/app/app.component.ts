@@ -17,6 +17,7 @@ import { FaqPage } from '../pages/faq/faq';
 import { OrdersPage } from '../pages/orders/orders';
 import { CartPage } from '../pages/cart/cart';
 import { DealerSearchPage } from '../pages/dealer-search/dealer_search';
+import { ChartPage } from '../pages/chart/chart';
 
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -66,6 +67,7 @@ export class MyApp implements OnInit {
       { title: 'My Cart', component: CartPage },
       { title: 'Dealer Locator', component: DealerSearchPage },
       { title: 'Register Purchase', component: DealerSearchPage, data: { registerPurchase: true } },
+      { title: 'Charts', component: ChartPage},
       { title: 'News and Updates', component: NewsPage },
       { title: 'Contact Us', component: ContactPage },
       { title: 'FAQs', component: FaqPage }

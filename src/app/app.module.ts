@@ -31,6 +31,7 @@ import { DealerSearchResultPage } from '../pages/dealer-search/result';
 import { RegisterPurchasePage } from '../pages/register-purchase/register_purchase';
 import { AboutPage } from '../pages/about/about';
 import { ListPage } from '../pages/list/list';
+import { ChartPage } from '../pages/chart/chart';
 
 import { RewardOverviewPage } from '../pages/reward-details/overview';
 import { RewardScreenshotPage } from '../pages/reward-details/screenshot';
@@ -85,7 +86,8 @@ enableProdMode();
     RegisterPurchasePage,
     OrderSummaryPage,
     AboutPage,
-    ListPage
+    ListPage,
+    ChartPage
   ],
   imports: [
     BrowserModule,
@@ -125,7 +127,8 @@ enableProdMode();
     DealerSearchResultPage,
     RegisterPurchasePage,
     OrderSummaryPage,
-    AboutPage
+    AboutPage,
+    ChartPage
   ],
   providers: [
     StatusBar,

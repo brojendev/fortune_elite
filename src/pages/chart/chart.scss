@@ -1,0 +1,19 @@
+.ios, .md {
+
+    page-chart {
+
+        .scroll-content {
+            background-color: map-get($colors, light);
+        }
+
+        ion-card-header {
+            font-weight: bold;
+        }
+        ion-card{
+          margin: 0 0 20px 0;
+          width: 100%;
+        }
+
+    }
+
+}
