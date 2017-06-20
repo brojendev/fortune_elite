@@ -66,7 +66,7 @@ export class MyApp implements OnInit {
       { title: 'My Cart', component: CartPage },
       { title: 'Charts', component: ChartPage},
       { title: 'Distributor Locator', component: DistributorSearchPage },
-      { title: 'Register Purchase', component: DistributorSearchPage, data: { registerPurchase: true } },
+      { title: 'Claim Sale', component: DistributorSearchPage, data: { registerPurchase: true } },
       { title: 'News and Updates', component: NewsPage },
       { title: 'Contact Us', component: ContactPage },
       { title: 'FAQs', component: FaqPage }

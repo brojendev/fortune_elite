@@ -25,3 +25,21 @@ ion-slides {
   margin-top: 10px;
   margin-bottom: 6px;
 }
+page-home{
+  ion-title{
+    background-image: url("../assets/top_logo.png");
+    display:block;
+    height:50px;
+    text-indent:-9999px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .dark-bg{
+    background-color: #e4e4e4;
+  }
+
+  ion-col img{
+    border-radius: 5px;
+  }
+}
