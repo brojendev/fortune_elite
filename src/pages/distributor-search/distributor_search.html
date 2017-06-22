@@ -25,10 +25,9 @@
 
   <div class="custom-card">
     <div class="title">Search by location</div>
-    <div class="content">
+   <div class="content">
       <ion-item>
         <ion-label>State*</ion-label>
-
         <ion-select [(ngModel)]="selectedState" (ionChange)="updateDistrictList($event)">
           <ion-option value="{{ state.id }}" *ngFor="let state of states">{{ state.name }}</ion-option>
         </ion-select>

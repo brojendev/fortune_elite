@@ -56,22 +56,22 @@
     "typescript": "~2.2.1"
   },
   "description": "An Ionic project",
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-fcm": {},
-      "cordova-plugin-camera": {},
-      "cordova-plugin-console": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-splashscreen": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-x-toast": {},
-      "ionic-plugin-keyboard": {},
-      "cordova-plugin-firebase": {}
-    },
-    "platforms": [
-      "android",
-      "ios"
-    ]
-  }
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-fcm": {},
+            "cordova-plugin-camera": {},
+            "cordova-plugin-console": {},
+            "cordova-plugin-device": {},
+            "cordova-plugin-splashscreen": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-x-toast": {},
+            "ionic-plugin-keyboard": {},
+            "cordova-plugin-firebase": {}
+        },
+        "platforms": [
+            "android",
+            "ios"
+        ]
+    }
 }
