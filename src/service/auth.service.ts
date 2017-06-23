@@ -4,10 +4,11 @@ import { AppConfig } from './app.config';
 import { ResponseService } from './response.service';
 import { Utils } from './utils';
 import 'rxjs/add/operator/toPromise';
+import { Device } from '@ionic-native/device';
 
 @Injectable()
 export class AuthService {
-  constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService, private utils: Utils) { }
+  constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService, private utils: Utils, private device: Device) { }
 
   loginUrl = this.appConfig.baseUrl + '/fortune_demo_req/auth';
   forgotPasswordUrl = this.appConfig.baseUrl + '/fortune_demo_req/forgot_password';
@@ -19,9 +20,9 @@ export class AuthService {
     let body = {
       userName: userModel.userName,
       passwd: userModel.password,
-      deviceId: userModel.deviceId,
-      os_type: this.appConfig.OSType,
-      os_version: this.appConfig.OSVersion,
+      deviceId: this.device.uuid,//userModel.deviceId,
+      os_type: this.device.platform,//this.appConfig.OSType,
+      os_version: this.device.version,//this.appConfig.OSVersion,
       APIkey: this.appConfig.APIKey,
       orgId: this.appConfig.orgId,
       contactHierId: this.appConfig.contactHierId

@@ -39,8 +39,10 @@ import { RewardSpecsPage } from '../pages/reward-details/specs';
 
 import { NewsDetailModal } from '../pages/news/news_detail';
 import { FiltersModal } from '../pages/rewards/filters';
+import { SalesApprovalPage } from '../pages/sales-approval/sales_approval';
 
 import { StatusBar } from '@ionic-native/status-bar';
+import { Device } from '@ionic-native/device';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AppConfig } from '../service/app.config';
@@ -87,7 +89,8 @@ enableProdMode();
     OrderSummaryPage,
     AboutPage,
     ListPage,
-    ChartPage
+    ChartPage,
+    SalesApprovalPage
   ],
   imports: [
     BrowserModule,
@@ -128,10 +131,12 @@ enableProdMode();
     RegisterPurchasePage,
     OrderSummaryPage,
     AboutPage,
-    ChartPage
+    ChartPage,
+    SalesApprovalPage
   ],
   providers: [
     StatusBar,
+    Device,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AppConfig,

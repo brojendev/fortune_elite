@@ -5,6 +5,7 @@ import { ActionSheetController, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { DealerService } from '../../service/dealer.service';
+import { GeneralService } from '../../service/general.service';
 import { Toast } from '@ionic-native/toast';
 
 @Component({
@@ -16,8 +17,12 @@ export class RegisterPurchasePage {
   selectedProduct: any;
   quantity: any;
   date: any;
+  products: any = [];
   attachedImage: any;
   purchaseData: any = {};
+  today: any;
+  todayStr: any;
+
   constructor(public navCtrl: NavController,
               private navParams: NavParams,
               private actionSheetCtrl: ActionSheetController,
@@ -26,11 +31,38 @@ export class RegisterPurchasePage {
               private toast: Toast,
               private toastCtrl: ToastController,
               private dealerService: DealerService,
+              private generalService: GeneralService,
               private loadingCtrl: LoadingController,
               private localStorageService: LocalStorageService,
               private alertCtrl: AlertController) {
     this.dealer = this.navParams.data.dealer;
-    this.purchaseData.dealertContactId = this.dealer.contact_id
+    this.purchaseData.dealertContactId = this.dealer.contact_id;
+    this.today = new Date();
+    this.todayStr  = this.today.toISOString().substring(0,10);
+    this.purchaseData.date = this.todayStr;
+  }
+
+  ionViewWillEnter() {
+
+    this.getAsyncData();
+  }
+
+
+  getAsyncData() {
+    let self = this;
+    let loadingDialog = this.getLoadingDialog();
+    loadingDialog.present();
+    this.generalService.getProductList().then(function(res) {
+    console.log('products:  '+res.product_list);
+      self.products = res.product_list;
+      loadingDialog.dismiss();
+    }).catch(function(error) {
+      loadingDialog.dismiss();
+      self.getCloseErrorAlert(
+        'Some Error Has Occured',
+        error
+      ).present();
+    });
   }
 
   submit() {
@@ -57,6 +89,7 @@ export class RegisterPurchasePage {
     this.dealerService.registerPurchase(token, this.purchaseData).then(function(res) {
       loadingDialog.dismiss();
       self.removeAttachedImage();
+      self.purchaseData.prodMasId = '';
       self.purchaseData.quantity = '';
       self.purchaseData.date = '';
       if(self.platform.is('cordova')){
@@ -76,8 +109,15 @@ export class RegisterPurchasePage {
   }
 
   validateForm() {
+
+    if (!this.purchaseData.prodMasId) {
+      return 'Please choose product';
+    }
     if (!this.purchaseData.quantity) {
       return 'Please enter quantity';
+    }
+    if (!this.purchaseData.date) {
+      return 'Please choose sale date';
     }
   }
 
@@ -89,6 +129,19 @@ export class RegisterPurchasePage {
           <img src="assets/loading.png"><br>
           Loading, please wait...
         </div>`
+    });
+  }
+
+  getCloseErrorAlert(title: string, message: string) {
+    return this.alertCtrl.create({
+      title: title,
+      message: message,
+      buttons: [{
+        text: 'Dismiss',
+        handler: () => {
+          this.navCtrl.pop();
+        }
+      }]
     });
   }
 

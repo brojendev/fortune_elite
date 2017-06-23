@@ -1,0 +1,43 @@
+.ios, .md {
+
+    page-sales-approval {
+
+      .bar-footer {
+         position:fixed;
+         bottom:0;
+         height:56px;
+         background-color: map-get($colors, secondary);
+         color: map-get($colors, light);
+         width: 100%;
+         font-size: 16px;
+         font-weight: 500;
+         padding: 12px;
+
+         ion-row{
+           width: 100%;
+           margin: 0 auto;
+           text-align: center;
+         }
+         .border-right{
+           border-right: 1px solid;
+         }
+      }
+      .clearArea{
+        height: 50px;
+      }
+      .actions.selected{
+        background-color: #002845;
+        border-radius: 0 0 5px 5px;
+      }
+      .actions.selected ion-col{
+        color: map-get($colors, light);
+      }
+
+      .actions{
+        .border-right{
+          border-right: 1px solid #E0E0E0;
+        }
+      }
+    }
+
+}

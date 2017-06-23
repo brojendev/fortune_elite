@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { Nav, Platform, AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Device } from '@ionic-native/device';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { Toast } from '@ionic-native/toast';
 
@@ -18,6 +19,7 @@ import { OrdersPage } from '../pages/orders/orders';
 import { CartPage } from '../pages/cart/cart';
 import { ChartPage } from '../pages/chart/chart';
 import { DistributorSearchPage } from '../pages/distributor-search/distributor_search';
+import { SalesApprovalPage } from '../pages/sales-approval/sales_approval';
 import { DomSanitizer } from '@angular/platform-browser';
 
 declare var FirebasePlugin: any;
@@ -50,6 +52,7 @@ export class MyApp implements OnInit {
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
+    public device: Device,
     private sharedService: SharedService,
     private _DomSanitizationService: DomSanitizer,
     private localStorageService: LocalStorageService,
@@ -66,6 +69,7 @@ export class MyApp implements OnInit {
       { title: 'My Cart', component: CartPage },
       { title: 'Charts', component: ChartPage},
       { title: 'Distributor Locator', component: DistributorSearchPage },
+      { title: 'Sales Approval', component: SalesApprovalPage },
       { title: 'Claim Sale', component: DistributorSearchPage, data: { registerPurchase: true } },
       { title: 'News and Updates', component: NewsPage },
       { title: 'Contact Us', component: ContactPage },

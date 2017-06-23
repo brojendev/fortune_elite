@@ -10,6 +10,7 @@ export class GeneralService {
   constructor(private http: Http, private appConfig: AppConfig, private responseService: ResponseService,  private utils: Utils) { }
 
   stateDistrictUrl = this.appConfig.baseUrl + '/fortune_demo_req/state_district_list';
+  productUrl = this.appConfig.baseUrl + '/fortune_demo_req/get_products_for_sale';
   identificationListUrl = this.appConfig.baseUrl + '/fortune_demo_req/identity_list';
   contentUrl = this.appConfig.baseUrl + '/fortune_demo_req/content';
 
@@ -23,6 +24,17 @@ export class GeneralService {
     let options = new RequestOptions({ headers: this.defaultHeaders });
 
     return this.http.post(this.stateDistrictUrl, this.utils.transformRequest(body), options).toPromise().then(this.responseService.extractData).catch(this.responseService.handleError);
+  }
+
+  getProductList(): Promise<any> {
+    let body = {
+      APIkey: this.appConfig.APIKey,
+      orgId: this.appConfig.orgId
+    };
+
+    let options = new RequestOptions({ headers: this.defaultHeaders });
+
+    return this.http.post(this.productUrl, this.utils.transformRequest(body), options).toPromise().then(this.responseService.extractData).catch(this.responseService.handleError);
   }
 
   getIdentificationList(): Promise<any> {

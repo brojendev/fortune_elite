@@ -11,4 +11,5 @@ export class AppConfig {
   OSVersion = '1.0';
   distributorHierID = 80;
   prodMasId = 107;
+  influencerHierId = 82;
 }

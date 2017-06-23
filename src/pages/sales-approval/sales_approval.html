@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Confirm Register Purchase</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="dark-bg">
+  <div class="custom-card dealer-card" *ngFor="let dealer of dealers">
+    <div class="content border-bottom">
+      <div class="dealer-detail clearfix">
+        <span class="image"><img src="assets/profile_placeholder.png"></span>
+        <div class="title">
+          {{ dealer.Contact_Name }}
+        </div>
+        <ion-icon name="call" color="secondary" class="icon-left"></ion-icon>
+        {{ ' '+dealer.ph_number }}<br>
+        <ion-icon name="contact" color="secondary" class="icon-left"></ion-icon>
+        {{ dealer.ID != null ?  ' '+dealer.ID : 'N/A'}} <br>
+        <ion-icon name="calendar" color="secondary" class="icon-left"></ion-icon>
+        {{ dealer.Sale_Date }}
+      </div>
+
+      {{ dealer.Contact_Name }} has sent you a purchase request of quantity <span class="text-highlight">{{ dealer.Bags_Sold}}kg</span>
+    </div>
+    <div [ngClass]="{'actions': true, 'selected':(selectedDealer.indexOf(dealer.sale_id) > -1 && multiSelect==true)}">
+      <ion-row >
+        <ion-col col-6 class="border-right" (click)="approveDealer(dealer.sale_id,'approve')" *ngIf="multiSelect==false">
+          Approve
+        </ion-col>
+        <ion-col col-6 (click)="approveDealer(dealer.sale_id,'reject')" *ngIf="multiSelect==false">
+          Reject
+        </ion-col>
+        <ion-col col-12 (click)="selectDealer(dealer)" *ngIf="multiSelect==true">
+          {{selectedDealer.indexOf(dealer.sale_id) > -1 ? 'Unselect' : 'Select'}}
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+  <div class="clearArea"></div>
+  <div class="row bar bar-footer" (click)="enableMultiselect(selectedDealer)" *ngIf="multiSelect==false && dealers.length > 0" >
+    <ion-row >
+      <ion-col col-12  >
+        Approve multiple
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="row bar bar-footer"  *ngIf="multiSelect==true">
+    <ion-row >
+      <ion-col col-6  class="border-right" (click)="approveDealer(selectedDealer,'approve')">
+        Approve
+      </ion-col>
+      <ion-col col-6  (click)="approveDealer(selectedDealer,'reject')">
+        Reject
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

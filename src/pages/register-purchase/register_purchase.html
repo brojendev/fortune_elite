@@ -30,11 +30,17 @@
     <div class="title">Enter Purchase Details</div>
     <div class="content">
       <ion-item>
+        <ion-label>Product*</ion-label>
+        <ion-select [(ngModel)]="purchaseData.prodMasId">
+          <ion-option value="{{ product.id }}" *ngFor="let product of products">{{ product.product_name }}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
         <ion-input type="text" placeholder="Quantity Purchased (kg)*" [(ngModel)]="purchaseData.quantity"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-datetime placeholder="Date of purchase" type="date-local" displayFormat="MMM DD, YYYY" pickerFormat="YYYY-MM-DD" [(ngModel)]="purchaseData.date"></ion-datetime>
+        <ion-datetime placeholder="Date of purchase*" type="date-local" [max]="todayStr" displayFormat="MMM DD, YYYY" pickerFormat="YYYY-MM-DD" [(ngModel)]="purchaseData.date"></ion-datetime>
       </ion-item>
 
       <input type="hidden" [(ngModel)]="purchaseData.dealertContactId" value="{{dealer.contact_id}}">

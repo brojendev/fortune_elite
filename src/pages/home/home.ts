@@ -5,9 +5,10 @@ import { RewardsPage } from '../rewards/rewards';
 import { LoginPage } from '../login/login';
 import { DistributorSearchPage } from '../distributor-search/distributor_search';
 import { OrdersPage } from '../orders/orders';
-import { ContactPage } from '../contact/contact';
+//import { ContactPage } from '../contact/contact';
 import { AboutPage } from '../about/about';
 import { LocalStorageService } from 'angular-2-local-storage';
+import { SalesApprovalPage } from '../sales-approval/sales_approval';
 
 @Component({
   selector: 'page-home',
@@ -20,8 +21,9 @@ export class HomePage implements OnInit {
     this.pages = [
       { title: 'Claim Sale', component: DistributorSearchPage, img: 'assets/claim-sale.png', data: { registerPurchase: true } },
       { title: 'My Order', component: OrdersPage, img: 'assets/MyOrders.png' },
+      { title: 'Sales Approval', component: SalesApprovalPage, img: 'assets/approve.png'},
       { title: 'Rewards', component: RewardsPage, img: 'assets/home_rewards.png' },
-      { title: 'Contact Us', component: ContactPage, img: 'assets/home_contact.png' },
+      //{ title: 'Contact Us', component: ContactPage, img: 'assets/home_contact.png' },
     ];
   }
 
