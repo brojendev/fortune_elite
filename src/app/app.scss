@@ -131,6 +131,9 @@ ion-menu .user-name {
     .title {
       padding: 0px;
       padding-top: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .title-sec {

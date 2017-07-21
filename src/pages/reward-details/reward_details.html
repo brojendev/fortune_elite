@@ -18,8 +18,8 @@
       <img src="{{reward.BaseUrl + reward.ProductImage}}">
       <div class="group">
         <div class="group">
-          <span class="left title">{{reward.productName}}</span>
-          <div class="right quantity-control">
+          <span class="left title" style="width: 60%; height: 35px; overflow: hidden;" >{{reward.productName}}</span>
+          <div class="right quantity-control" style="width: 35%;">
             <img src="assets/quantity_minus.png" *ngIf="quantity > 1" (click)="decreaseQty()">
             <span>{{quantity || 1}}</span>
             <img src="assets/quantity_plus.png" *ngIf="quantity < 999" (click)="increaseQty()">

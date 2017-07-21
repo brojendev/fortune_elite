@@ -34,7 +34,7 @@ export class FaqPage {
     }
 
     let self = this;
-    this.generalService.getGeneralContent(token, 'sitareFAQs').then(function(res) {
+    this.generalService.getGeneralContent(token, 'eliteFAQs').then(function(res) {
       loadingDialog.dismiss();
       self.faqs = res.content_details;
     }).catch(function(error) {

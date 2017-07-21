@@ -47,6 +47,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
+    console.log('Device_token :', this.localStorageService.get('device_id'))     
     let validationError = this.validateForm();
     if (validationError) {
       this.getErrorAlert(

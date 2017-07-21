@@ -35,7 +35,7 @@ export class NewsPage {
     }
 
     let self = this;
-    this.generalService.getGeneralContent(token, 'newsNUpdates').then(function(res) {
+    this.generalService.getGeneralContent(token, 'newsNUpdatesElite').then(function(res) {
       loadingDialog.dismiss();
       self.news = res.content_details;
     }).catch(function(error) {

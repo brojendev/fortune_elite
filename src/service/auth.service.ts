@@ -17,12 +17,13 @@ export class AuthService {
   defaultHeaders = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 
   login(userModel: any): Promise<any> {
+    console.log(userModel);
     let body = {
       userName: userModel.userName,
       passwd: userModel.password,
-      deviceId: this.device.uuid,//userModel.deviceId,
-      os_type: this.device.platform,//this.appConfig.OSType,
-      os_version: this.device.version,//this.appConfig.OSVersion,
+      deviceId: userModel.deviceId,
+      os_type: this.appConfig.OSType,
+      os_version: this.appConfig.OSVersion,
       APIkey: this.appConfig.APIKey,
       orgId: this.appConfig.orgId,
       contactHierId: this.appConfig.contactHierId

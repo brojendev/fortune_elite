@@ -117,9 +117,13 @@ export class MyApp implements OnInit {
         FirebasePlugin.onNotificationOpen(function(notification) {
           console.log(notification);
           if(notification.body !== undefined){
+            var message = notification.body
+            if(notification.image !== undefined && notification.image != ""){
+              message = '<p style="max-height: 150px; text-align: center; margin-bottom: 5px;"><img src="'+notification.image+'"></p>' + message;
+            }
             alertCtrl.create({
-              title: 'Notification',
-              message: notification.body,
+              title: notification.title,
+              message: message,
               buttons: ['Dismiss']
             }).present();
           }
@@ -130,7 +134,8 @@ export class MyApp implements OnInit {
         FirebasePlugin.onTokenRefresh(function(token) {
           // save this server-side and use it to push notifications to this device
           self.localStorageService.set('device_id', token);
-          console.log(token);
+          console.log('Device_token :', self.localStorageService.get('device_id'))        
+          console.log('Token :',token);
         }, function(error) {
           console.error(error);
         });

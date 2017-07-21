@@ -12,3 +12,20 @@ img.order_status {
 .padding-vertical {
   padding: 8px 0px;
 }
+
+page-order-details{
+  .cart-item{
+    overflow: auto;
+  }
+  .cart-item > .group{
+    padding-left: 0px;
+    position: relative;;
+    left: auto;
+    top: auto;
+    width: 80%;
+    float: right;
+  }
+  .cart-item > img{
+    float: left;
+  }
+}

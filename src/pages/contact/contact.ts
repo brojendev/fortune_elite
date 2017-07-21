@@ -36,7 +36,7 @@ export class ContactPage {
     }
 
     let self = this;
-    this.generalService.getGeneralContent(token, 'sitareContactUs').then(function(res) {
+    this.generalService.getGeneralContent(token, 'eliteContactUs').then(function(res) {
       loadingDialog.dismiss();
       //self.faqs = res.content_details;
       for (let list of res.content_details){
